@@ -1,11 +1,7 @@
 import { createClient } from '@supabase/supabase-js';
 
-// Esta linha diz: "Procure a URL nas variáveis de ambiente, se não achar, use vazio"
-const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
-const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
+// Colocando as chaves direto aqui para não ter erro de leitura
+const supabaseUrl = 'https://zdtzzqdglhhglqwhcyxf.supabase.co';
+const supabaseAnonKey = 'sb_publishable_TvNBzulwvEmXhKOvblT1lQ_tSbrzrEm';
 
-if (!supabaseUrl || !supabaseAnonKey) {
-  console.error("Erro: As chaves do Supabase não foram encontradas nas variáveis de ambiente.");
-}
-
-export const supabase = createClient(supabaseUrl || '', supabaseAnonKey || '');
+export const supabase = createClient(supabaseUrl, supabaseAnonKey);
